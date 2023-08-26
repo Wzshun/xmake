@@ -243,6 +243,10 @@ function main(snippets, opt)
             if option.get("diagnosis") then
                 cprint("${dim}> %s", compiler.compcmd(sourcefile, objectfile, opt))
             end
+            if opt and opt.target then
+                print("target: ", opt.target:name())
+                print("cxx: ", opt.target:tool("cxx"))
+            end
             compiler.compile(sourcefile, objectfile, opt)
             if #links > 0 or opt.tryrun then
                 if option.get("diagnosis") then
