@@ -243,6 +243,7 @@ function main(snippets, opt)
             if option.get("diagnosis") then
                 cprint("${dim}> %s", compiler.compcmd(sourcefile, objectfile, opt))
             end
+            print("----------------------- check ----------------------")
             if opt and opt.target then
                 print("target: ", opt.target:name())
                 print("cxx: ", opt.target:tool("cxx"))
